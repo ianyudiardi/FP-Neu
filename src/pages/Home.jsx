@@ -1,9 +1,18 @@
 import React from 'react'
+import Button from '../components/ui/Button'
 
 export default function Home() {
     return (
-        <div className='flex items-center justify-center h-screen'>
-            <h1 className='text-3xl font-bold'>Home</h1>
-        </div>
+        <section className='container bg-red-600 grid grid-cols-2 h-screen'>
+            <div className='bg-gray-300'>
+                <div className='mt-36 pl-20'>
+                    <h1 className='font-bold text-2xl text-left'>Learn Something New,<br />Free of Charge.</h1>
+                    <Button type='black'>Get Started</Button>
+                </div>
+            </div>
+            <div className='bg-logos flex items-center justify-center'>
+                <img src="Mono.png" className='size-fit' alt="" />
+            </div>
+        </section>
     )
 }
