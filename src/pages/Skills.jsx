@@ -4,46 +4,45 @@ export default function Skills() {
     const skills = [
         {
             id: 1,
-            title: "Andre",
-            qual: "Frontend - 5y+",
+            name: "Andre",
+            title: "Frontend - 5y+",
             description: "Looking for backend",
         },
 
         {
             id: 2,
-            title: "Barry",
-            qual: "Backend - 5y+",
+            name: "Barry",
+            title: "Backend - 5y+",
             description: "Looking for frontend"
         },
 
         {
             id: 3,
-            title: "Candice",
-            qual: "Musician - 7y+",
+            name: "Candice",
+            title: "Musician - 7y+",
             description: "I can teach you how to play guitar/piano in exchange for roofing services"
         },
 
         {
             id: 4,
-            title: "Derek",
-            qual: "[PLACEHOLDER]",
+            name: "Derek",
+            title: "[PLACEHOLDER]",
             description: "[PLACEHOLDER]"
         },
 
         {
             id: 5,
-            title: "Eugene",
-            qual: "[PLACEHOLDER]",
+            name: "Eugene",
+            title: "[PLACEHOLDER]",
             description: "[PLACEHOLDER]"
         },
 
         {
             id: 6,
-            title: "Vasily",
-            qual: "[PLACEHOLDER]",
+            name: "Vasily",
+            title: "[PLACEHOLDER]",
             description: "[PLACEHOLDER]"
         },
-
     ]
 
     return (
@@ -56,7 +55,7 @@ export default function Skills() {
             <div className="grid grid-cols-3 gap-4">
                 {
                     skills.map((skill) => (
-                        <SkillCards key={skill.id} title={skill.title} qual={skill.qual} description={skill.description} />
+                        <SkillCards key={skill.id} name={skill.name} title={skill.title} description={skill.description} />
                     ))
                 }
             </div>

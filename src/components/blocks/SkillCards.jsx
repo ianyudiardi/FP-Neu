@@ -1,4 +1,4 @@
-export default function SkillCards({ title, description, qual }) {
+export default function SkillCards({name, title, description}) {
     return (
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div>
@@ -7,11 +7,11 @@ export default function SkillCards({ title, description, qual }) {
                 <div className="p-5">
                     <div>
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {title}
+                            {name}
                         </h5>
                     </div>
                     <p className="font-normal text-gray-700 dark:text-gray-400">
-                       {qual}
+                       {title}
                     </p>
 
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
