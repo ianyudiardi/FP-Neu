@@ -3,7 +3,7 @@ import Button from '../components/ui/Button'
 
 export default function Home() {
     return (
-        <section className='container bg-red-600 grid grid-cols-2 h-screen'>
+        <section className='grid grid-cols-2 h-screen'>
             <div className='bg-gray-300'>
                 <div className='mt-36 pl-20'>
                     <h1 className='font-bold text-2xl text-left'>Learn Something New,<br />Free of Charge.</h1>
