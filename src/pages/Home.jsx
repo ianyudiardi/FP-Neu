@@ -7,7 +7,7 @@ export default function Home() {
             <div className='bg-gray-300'>
                 <div className='mt-36 pl-20'>
                     <h1 className='font-bold text-2xl text-left'>Learn Something New,<br />Free of Charge.</h1>
-                    <Button type='black'>Get Started</Button>
+                    <Button type='black'><a href="/Skills">Get Started</a></Button>
                 </div>
             </div>
             <div className='bg-logos flex items-center justify-center'>

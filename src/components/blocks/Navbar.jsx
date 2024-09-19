@@ -1,4 +1,5 @@
 import Button from "../ui/Button"
+
 export default function Navbar() {
     return (
         <section className="bg-logos">
@@ -7,9 +8,9 @@ export default function Navbar() {
                     <img src="Mono.png" alt="" className="size-full w-fit" />
                     <div className="flex gap-4">
                         <ul className="flex gap-2 text-white">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                            <li className="hover:underline"><a href="/">Home</a></li>
+                            <li className="hover:underline"><a href="/Skills">Skills</a></li>
+                            <li className="hover:underline"><a href="/Swaps">Swaps</a></li>
                         </ul>
                         <Button type="white">Sign in</Button>
                         <Button type="black">Register</Button>
