@@ -60,15 +60,20 @@ export default function Swaps() {
             <SwapLayout>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="sent">
                     {
+                          
                         swaps.map((swap) => (
+                            swap.status === "sent" && swap.status !== "pending" ?
                             <SwapCards key={swap.id} name={swap.name} title={swap.title} description={swap.description} status={swap.status} />
+                            : null
                         ))
                     }
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="received">
                     {
                         swaps.map((swap) => (
+                            swap.status === "pending" && swap.status !== "sent" ?
                             <SwapCards key={swap.id} name={swap.name} title={swap.title} description={swap.description} status={swap.status} />
+                            : null 
                         ))
                     }
                 </div>

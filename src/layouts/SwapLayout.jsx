@@ -21,7 +21,7 @@ export default function SwapLayout({ children }) {
         <section className={`flex flex-col ${sent && !received ? "bg-gray-400" : "bg-gray-600" } rounded-lg gap-2`}>
             <section className="grid grid-cols-3">
                 <div className="bg-gray-400 px-2">
-                    <button className="text-3xl font-bold hover:bg-gray-600 focus:bg-gray-800" onClick={() => {
+                    <button className="text-3xl font-bold hover:bg-gray-600 focus:bg-gray-400" onClick={() => {
                         setSent(true);
                         setReceived(false);
                     }}>
@@ -29,7 +29,7 @@ export default function SwapLayout({ children }) {
                     </button>
                 </div>
                 <div className="bg-gray-600 px-2">
-                    <button className="text-3xl font-bold" onClick={() => {
+                    <button className="text-3xl font-bold hover:bg-gray-400 focus:bg-gray-600" onClick={() => {
                         setSent(false);
                         setReceived(true);
                     }}>
