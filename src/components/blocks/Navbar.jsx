@@ -11,8 +11,8 @@ export default function Navbar() {
                             <li>About</li>
                             <li>Contact</li>
                         </ul>
-                        <Button type="white">Sign in</Button>
-                        <Button type="black">Register</Button>
+                        <Button type="signin" className={`bg-gray-300 hover:bg-gray-400 active:bg-gray-100 border border-gray-600 rounded px-2 text-center`}>Sign in</Button>
+                        <Button type="register" className={`bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 text-center text-white`}>Register</Button>
                     </div>
                 </nav>
             </div>
