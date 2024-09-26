@@ -1,5 +1,10 @@
+import { Tabs } from "flowbite-react";
+import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
+import { MdDashboard } from "react-icons/md";
+
 import SwapCards from "../components/blocks/SwapCards"
 import SwapLayout from "../layouts/SwapLayout"
+import SwapLayoutNew from "../layouts/SwapLayoutNew";
 
 export default function Swaps() {
     const swaps = [

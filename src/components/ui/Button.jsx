@@ -46,7 +46,7 @@ export default function Button({ children, className, type }) {
                                 </a>
                             </div>
                             <div className="w-full">
-                                <button>Log in to your account</button>
+                                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 text-center text-white">Log in</button>
                             </div>
                             <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
                                 Not registered?&nbsp;
@@ -99,12 +99,12 @@ export default function Button({ children, className, type }) {
                                 </a>
                             </div>
                             <div className="w-full">
-                                <button>Log in to your account</button>
+                                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 align-middle text-center text-white">Register</button>
                             </div>
                             <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
-                                Not registered?&nbsp;
+                                Already have an account?&nbsp;
                                 <a href="#" className="text-cyan-700 hover:underline dark:text-cyan-500">
-                                    Create account
+                                    Sign In
                                 </a>
                             </div>
                         </div>
