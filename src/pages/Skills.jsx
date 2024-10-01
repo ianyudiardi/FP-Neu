@@ -1,49 +1,60 @@
+import { useState, useEffect } from "react"
 import SkillCards from "../components/blocks/SkillCards"
 
 export default function Skills() {
-    const skills = [
-        {
-            id: 1,
-            name: "Andre",
-            title: "Frontend - 5y+",
-            description: "Looking for backend",
-        },
+    // const skills = [
+    //     {
+    //         id: 1,
+    //         name: "Andre",
+    //         title: "Frontend - 5y+",
+    //         description: "Looking for backend",
+    //     },
 
-        {
-            id: 2,
-            name: "Barry",
-            title: "Backend - 5y+",
-            description: "Looking for frontend"
-        },
+    //     {
+    //         id: 2,
+    //         name: "Barry",
+    //         title: "Backend - 5y+",
+    //         description: "Looking for frontend"
+    //     },
 
-        {
-            id: 3,
-            name: "Candice",
-            title: "Musician - 7y+",
-            description: "I can teach you how to play guitar/piano in exchange for roofing services"
-        },
+    //     {
+    //         id: 3,
+    //         name: "Candice",
+    //         title: "Musician - 7y+",
+    //         description: "I can teach you how to play guitar/piano in exchange for roofing services"
+    //     },
 
-        {
-            id: 4,
-            name: "Derek",
-            title: "[PLACEHOLDER]",
-            description: "[PLACEHOLDER]"
-        },
+    //     {
+    //         id: 4,
+    //         name: "Derek",
+    //         title: "[PLACEHOLDER]",
+    //         description: "[PLACEHOLDER]"
+    //     },
 
-        {
-            id: 5,
-            name: "Eugene",
-            title: "[PLACEHOLDER]",
-            description: "[PLACEHOLDER]"
-        },
+    //     {
+    //         id: 5,
+    //         name: "Eugene",
+    //         title: "[PLACEHOLDER]",
+    //         description: "[PLACEHOLDER]"
+    //     },
 
-        {
-            id: 6,
-            name: "Vasily",
-            title: "[PLACEHOLDER]",
-            description: "[PLACEHOLDER]"
-        },
-    ]
+    //     {
+    //         id: 6,
+    //         name: "Vasily",
+    //         title: "[PLACEHOLDER]",
+    //         description: "[PLACEHOLDER]"
+    //     },
+    // ]
+
+    const [skills, setSkills] = useState([])
+    function getUsers() {
+        fetch('https://dummyjson.com/users')
+            .then(res => res.json())
+            .then((result) => {
+                setSkills(result.users)
+            });
+    }
+    useEffect(() => { getUsers(); }, [])
 
     return (
         <section className="container h-screen">
@@ -54,8 +65,9 @@ export default function Skills() {
 
             <div className="grid grid-cols-3 gap-4">
                 {
+                    skills &&
                     skills.map((skill) => (
-                        <SkillCards key={skill.id} name={skill.name} title={skill.title} description={skill.description} />
+                        <SkillCards key={skill.id} name={skill.firstName} />
                     ))
                 }
             </div>
