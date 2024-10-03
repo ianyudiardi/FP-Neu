@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import SkillCards from "../components/blocks/SkillCards"
+import data_skills from "../data/skills.json"
 
 export default function Skills() {
     // const skills = [
@@ -46,7 +47,7 @@ export default function Skills() {
     //     },
     // ]
 
-    const [skills, setSkills] = useState([])
+    const [skills, setSkills] = useState(data_skills.data)
     function getUsers() {
         fetch('https://dummyjson.com/users')
             .then(res => res.json())

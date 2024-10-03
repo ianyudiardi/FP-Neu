@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SignInModal from '../components/ui/CustomModal'
 
 export default function Home() {
     return (
