@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom/dist"
-import Button from "../ui/Button"
 import CustomModal from "../ui/CustomModal"
 import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
@@ -41,7 +40,7 @@ export default function Navbar() {
                                 username &&
                                 (
                                     <>
-                                        <button className="bg-gray-300 hover:bg-gray-400 active:bg-gray-100 border border-gray-600 rounded px-2 text-center text-black">{username}</button>
+                                        <Link to="/Profile" className="bg-gray-300 hover:bg-gray-400 active:bg-gray-100 border border-gray-600 rounded px-2 text-center text-black">{username}</Link>
                                         <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 text-center text-white" onClick={logout}>Logout</button>
                                     </>
                                 )

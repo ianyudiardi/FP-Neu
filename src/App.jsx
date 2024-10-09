@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Skills from './pages/Skills'
 import Talent from './pages/Talent'
 import Swaps from './pages/Swaps'
+import Profile from './pages/Profile'
 
 export default function App() {
   return (
@@ -14,9 +15,10 @@ export default function App() {
     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Skills" element={<Skills />} />
-        <Route path="/Talent" element={<Talent />} />
-        <Route path="/Swaps" element={<Swaps />} />     
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/talent" element={<Talent />} />
+        <Route path="/swaps" element={<Swaps />} />     
+        <Route path="/profile" element={<Profile />} />     
       </Routes>
     </BrowserRouter>
   )

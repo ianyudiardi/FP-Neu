@@ -16,7 +16,7 @@ export default function Talent() {
                     </div>
                 </div>
             </section>  
-            <div className="bg-gray-500 mt-10 mb-5   p-4 rounded-lg">
+            <div className="bg-gray-500 mt-10 mb-5 p-4 rounded-lg">
                 <p>"I'm a Frontend Developer with expertise in building responsive, user-friendly websites and web applications. I specialize in HTML, CSS, JavaScript, and frameworks like React and Vue.js. I can help you create modern, visually appealing interfaces, improve your site's performance, and ensure a seamless user experience across devices. Whether you need a landing page, single-page application, or UI/UX improvements, I’m here to help bring your ideas to life!"</p>
             </div>
             <div className="flex justify-center">

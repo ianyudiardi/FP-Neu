@@ -2,11 +2,38 @@ import React from "react";
 import { Tabs } from "flowbite-react";
 import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
-import { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import SwapCards from "../components/blocks/SwapCards";
 
 export default function SwapLayoutNew({ children }) {
+    const navigate = useNavigate()
+    function getTokenLocalStorage() {
+        return localStorage.getItem('token')
+    }
+
+    // useEffect(() => {
+    //     if (!getTokenLocalStorage()) {
+    //         alert('You are not logged in. Please log in first.')
+    //         navigate('/')
+    //         return;
+    //     }
+
+    //     //authenticate token
+    //     fetch('https://dummyjson.com/auth/me', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': `Bearer ${getTokenLocalStorage()}`,
+    //         },
+    //     })
+    //         .then(res => {
+    //             if (!res.ok) {
+    //                 navigate('/')
+    //             }
+    //         })
+    // },[])
+
     const swaps = [
         {
             id: 1,
@@ -57,7 +84,7 @@ export default function SwapLayoutNew({ children }) {
         },
     ]
 
-    return (
+    return getTokenLocalStorage() ? (
         <div className="container h-screen py-4">
             <Tabs aria-label="Default tabs" variant="default">
                 <Tabs.Item active title="Profile" icon={HiUserCircle}>
@@ -85,5 +112,9 @@ export default function SwapLayoutNew({ children }) {
                 </Tabs.Item>
             </Tabs>
         </div>
-    );
+    ) : (
+        <div className="container h-screen flex justify-center items-center">
+            <h1 className="text-center text-2xl">You are not logged in. Please log in first.</h1>
+        </div>
+    )
 }
