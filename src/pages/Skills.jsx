@@ -1,61 +1,31 @@
-import { useState, useEffect } from "react"
-import SkillCards from "../components/blocks/SkillCards"
-import data_skills from "../data/skills.json"
+import { useState, useEffect } from "react";
+import SkillCards from "../components/blocks/SkillCards";
+import data_skills from "../data/skills.json";
+import { useSearchParams } from "react-router-dom";
 
 export default function Skills() {
-    // const skills = [
-    //     {
-    //         id: 1,
-    //         name: "Andre",
-    //         title: "Frontend - 5y+",
-    //         description: "Looking for backend",
-    //     },
+    const [searchParams, setSearchParams] = useSearchParams();
+    const currentPage = parseInt(searchParams.get('page')) || 1;
+    const [skills, setSkills] = useState([]);
+    const [totalPages, setTotalPages] = useState(1);
+    const skillsPerPage = 6;
 
-    //     {
-    //         id: 2,
-    //         name: "Barry",
-    //         title: "Backend - 5y+",
-    //         description: "Looking for frontend"
-    //     },
-
-    //     {
-    //         id: 3,
-    //         name: "Candice",
-    //         title: "Musician - 7y+",
-    //         description: "I can teach you how to play guitar/piano in exchange for roofing services"
-    //     },
-
-    //     {
-    //         id: 4,
-    //         name: "Derek",
-    //         title: "[PLACEHOLDER]",
-    //         description: "[PLACEHOLDER]"
-    //     },
-
-    //     {
-    //         id: 5,
-    //         name: "Eugene",
-    //         title: "[PLACEHOLDER]",
-    //         description: "[PLACEHOLDER]"
-    //     },
-
-    //     {
-    //         id: 6,
-    //         name: "Vasily",
-    //         title: "[PLACEHOLDER]",
-    //         description: "[PLACEHOLDER]"
-    //     },
-    // ]
-
-    const [skills, setSkills] = useState(data_skills.data)
-    function getUsers() {
-        fetch('https://dummyjson.com/users')
+    function getSkills(page = 1) {
+        fetch(`https://dummyjson.com/users?limit=${skillsPerPage}&skip=${(page - 1) * skillsPerPage}`)
             .then(res => res.json())
             .then((result) => {
-                setSkills(result.users)
+                setSkills(result.users);
+                setTotalPages(Math.ceil(result.total / skillsPerPage));
             });
     }
-    useEffect(() => { getUsers(); }, [])
+
+    useEffect(() => {
+        getSkills(currentPage);
+    }, [currentPage]);
+
+    const goToPage = (page) => {
+        setSearchParams({ page });
+    };
 
     return (
         <section className="container h-screen">
@@ -72,6 +42,25 @@ export default function Skills() {
                     ))
                 }
             </div>
+
+            {/* Pagination Controls */}
+            <div className="flex justify-center mt-4 pb-20">
+                <button
+                    onClick={() => goToPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 mx-2 bg-gray-300 rounded disabled:bg-gray-100"
+                >
+                    Previous
+                </button>
+                <span className="px-4 py-2">Page {currentPage} of {totalPages}</span>
+                <button
+                    onClick={() => goToPage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 mx-2 bg-gray-300 rounded disabled:bg-gray-100"
+                >
+                    Next
+                </button>
+            </div>
         </section>
-    )
+    );
 }
