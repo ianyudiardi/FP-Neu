@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { Modal } from "flowbite-react";
-import { useNavigate } from 'react-router-dom';
 
 export default function CustomModal({children, textTrigger, className}) {
     const [openModal, setOpenModal] = useState(false);

@@ -1,4 +1,4 @@
-import Button from "../components/ui/Button"
+import { Link } from "react-router-dom"
 
 export default function Talent() {
     return (
@@ -20,7 +20,7 @@ export default function Talent() {
                 <p>"I'm a Frontend Developer with expertise in building responsive, user-friendly websites and web applications. I specialize in HTML, CSS, JavaScript, and frameworks like React and Vue.js. I can help you create modern, visually appealing interfaces, improve your site's performance, and ensure a seamless user experience across devices. Whether you need a landing page, single-page application, or UI/UX improvements, I’m here to help bring your ideas to life!"</p>
             </div>
             <div className="flex justify-center">
-                <button className="h-8 w-full bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 py-1 text-center text-white">Swap</button>
+                <Link to="/swaps" className="h-8 w-full bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 py-1 text-center text-white">Swap</Link>
             </div>
         </section>
     )

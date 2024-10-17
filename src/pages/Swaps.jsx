@@ -48,7 +48,7 @@ export default function SwapLayoutNew({ children }) {
             name: "Barry",
             title: "Backend - 5y+",
             description: "Looking for frontend",
-            status: "pending",
+            status: "received",
         },
 
         {
@@ -64,7 +64,7 @@ export default function SwapLayoutNew({ children }) {
             name: "Derek",
             title: "[PLACEHOLDER]",
             description: "[PLACEHOLDER]",
-            status: "pending",
+            status: "received",
         },
 
         {
@@ -80,30 +80,31 @@ export default function SwapLayoutNew({ children }) {
             name: "Vasily",
             title: "[PLACEHOLDER]",
             description: "[PLACEHOLDER]",
-            status: "pending",
+            status: "received",
         },
     ]
 
     return getTokenLocalStorage() ? (
         <div className="container h-screen py-4">
             <Tabs aria-label="Default tabs" variant="default">
-                <Tabs.Item active title="Profile" icon={HiUserCircle}>
+                <Tabs.Item active title="Sent" icon={HiUserCircle}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="sent">
                         {
 
                             swaps.map((swap) => (
-                                swap.status === "sent" && swap.status !== "pending" ?
+                                swap.status === "sent" && swap.status !== "received" ?
                                     <SwapCards key={swap.id} name={swap.name} title={swap.title} description={swap.description} status={swap.status} />
                                     : null
                             ))
                         }
                     </div>
                 </Tabs.Item>
-                <Tabs.Item title="Dashboard" icon={MdDashboard}>
+
+                <Tabs.Item title="Received" icon={MdDashboard}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="received">
                         {
                             swaps.map((swap) => (
-                                swap.status === "pending" && swap.status !== "sent" ?
+                                swap.status === "received" && swap.status !== "sent" ?
                                     <SwapCards key={swap.id} name={swap.name} title={swap.title} description={swap.description} status={swap.status} />
                                     : null
                             ))

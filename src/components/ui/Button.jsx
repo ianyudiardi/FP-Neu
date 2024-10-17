@@ -1,128 +1,46 @@
 import { Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
 
-export default function Button({ children, className, type }) {
-    if (type === "signin") {
-        const [openModal, setOpenModal] = useState(false);
-        const [email, setEmail] = useState('');
+export default function Button({ onClick, className, type }) {
+    // if (type === "sent") {
+    //     return (
+    //         <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800`}>
+    //             Unswap
+    //         </button>
+    //     )
+    // } else if (type === "received") {
+    //     return (
+    //         <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}>
+    //             Accept
+    //         </button>
+    //     )
+    // } else if (type === "accepted") {
+    //     <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800`}>
+    //         Accepted
+    //     </button>
+    // } else if (type === 'unswapped') {
+    //     <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800`}>
+    //         Accept
+    //     </button>
+    // }
 
-        function onCloseModal() {
-            setOpenModal(false);
-            setEmail('');
-        }
-        return (
-            <>
-                <button className={`${className}`} onClick={() => setOpenModal(true)}>{children}</button>
-                <Modal show={openModal} size="md" onClose={onCloseModal} popup>
-                    <Modal.Header />
-                    <Modal.Body>
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label htmlFor="email" value="Your email" />
-                                </div>
-                                <TextInput
-                                    id="email"
-                                    placeholder="name@company.com"
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label htmlFor="password" value="Your password" />
-                                </div>
-                                <TextInput id="password" type="password" required />
-                            </div>
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-2">
-                                    <Checkbox id="remember" />
-                                    <Label htmlFor="remember">Remember me</Label>
-                                </div>
-                                <a href="#" className="text-sm text-cyan-700 hover:underline dark:text-cyan-500">
-                                    Lost Password?
-                                </a>
-                            </div>
-                            <div className="w-full">
-                                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 text-center text-white">Log in</button>
-                            </div>
-                            <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
-                                Not registered?&nbsp;
-                                <a href="#" className="text-cyan-700 hover:underline dark:text-cyan-500">
-                                    Create account
-                                </a>
-                            </div>
-                        </div>
-                    </Modal.Body>
-                </Modal>
-            </>
-        )
-    } else if (type === "register") {
-        const [openModal, setOpenModal] = useState(false);
-        const [email, setEmail] = useState('');
+    const baseStyle = "inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none"
 
-        function onCloseModal() {
-            setOpenModal(false);
-            setEmail('');
-        }
-        return (
-            <>
-                <button className={`${className}`} onClick={() => setOpenModal(true)}>{children}</button>
-                <Modal show={openModal} size="md" onClose={onCloseModal} popup>
-                    <Modal.Header />
-                    <Modal.Body>
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Register</h3>
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label htmlFor="email" value="Your email" />
-                                </div>
-                                <TextInput
-                                    id="email"
-                                    placeholder="name@company.com"
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label htmlFor="password" value="Your password" />
-                                </div>
-                                <TextInput id="password" type="password" required />
-                            </div>
-                            <div className="flex justify-between">
-                                <a href="#" className="text-sm text-cyan-700 hover:underline dark:text-cyan-500">
-                                    Lost Password?
-                                </a>
-                            </div>
-                            <div className="w-full">
-                                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 align-middle text-center text-white">Register</button>
-                            </div>
-                            <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
-                                Already have an account?&nbsp;
-                                <a href="#" className="text-cyan-700 hover:underline dark:text-cyan-500">
-                                    Sign In
-                                </a>
-                            </div>
-                        </div>
-                    </Modal.Body>
-                </Modal>
-            </>
-        )
-    } else if (type === "sent") {
-        return (
-            <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800`}>
-                Unswap
-            </button>
-        )
-    } else if (type === "pending") {
-        return (
-            <button className={`${className} inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}>
-                Accept
-            </button>
-        )
+    const variants = {
+        sent: "text-white bg-red-700  hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800",
+        received: "text-white bg-blue-700  hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+        accepted: "text-white bg-green-700  hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800",
+        disabled: "text-white disabled bg-gray-700 dark:bg-gray-600"
     }
+
+    return (
+        <button className={`${className} ${baseStyle} ${variants[type]}`} onClick={onClick} >
+            {
+                type === "sent" ? "Unswap" :
+                    type === "received" ? "Accept" :
+                        type === "accepted" ? "Accepted" :
+                            type === "disabled" ? "Unswapped" : null
+            }
+        </button>
+    )
 }

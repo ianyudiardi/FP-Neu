@@ -35,7 +35,7 @@ export default function Navbar() {
                         <ul className="flex gap-2 text-white items-center">
                             <li className="hover:underline"><Link to="/">Home</Link></li>
                             <li className="hover:underline"><Link to="/Skills">Skills</Link></li>
-                            <li className="hover:underline"><Link to="/Swaps">Swaps</Link></li>
+                            <li className={`hover:underline ${token ? "block" : "hidden"} `}><Link to="/Swaps">Swaps</Link></li>
                             {
                                 username &&
                                 (

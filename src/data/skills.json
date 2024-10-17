@@ -3,37 +3,43 @@
         {
             "id": 1,
             "name": "Andre",
-            "title": "Frontend - 5y+",
+            "title": "Frontend",
+            "experience": "5y+",
             "description": "Looking for backend"
         },
         {
             "id": 2,
             "name": "Barry",
-            "title": "Backend - 5y+",
+            "title": "Backend",
+            "experience": "5y+",
             "description": "Looking for frontend"
         },
         {
             "id": 3,
             "name": "Candice",
-            "title": "Musician - 7y+",
+            "title": "Musician",
+            "experience": "7y+",
             "description": "I can teach you how to play guitar/piano in exchange for roofing services"
         },
         {
             "id": 4,
             "name": "Derek",
             "title": "[PLACEHOLDER]",
+            "experience": "[PLACEHOLDER]",
             "description": "[PLACEHOLDER]"
         },
         {
             "id": 5,
             "name": "Eugene",
             "title": "[PLACEHOLDER]",
+            "experience": "[PLACEHOLDER]",
             "description": "[PLACEHOLDER]"
         },
         {
             "id": 6,
             "name": "Vasily",
             "title": "[PLACEHOLDER]",
+            "experience": "[PLACEHOLDER]",
             "description": "[PLACEHOLDER]"
         }
     ],
