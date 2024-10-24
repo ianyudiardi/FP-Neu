@@ -8,7 +8,7 @@ export default function Skills() {
     const currentPage = parseInt(searchParams.get('page')) || 1;
     const [skills, setSkills] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
-    const skillsPerPage = 6;
+    const skillsPerPage = 30;
 
     function getSkills(page = 1) {
         fetch(`https://dummyjson.com/users?limit=${skillsPerPage}&skip=${(page - 1) * skillsPerPage}`)
@@ -34,7 +34,7 @@ export default function Skills() {
                 <h3 className="text-gray-600">See which skills people are offering.</h3>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {
                     skills &&
                     skills.map((skill) => (

@@ -88,7 +88,7 @@ export default function SwapLayoutNew({ children }) {
         <div className="container h-screen py-4">
             <Tabs aria-label="Default tabs" variant="default">
                 <Tabs.Item active title="Sent" icon={HiUserCircle}>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="sent">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" type="sent">
                         {
 
                             swaps.map((swap) => (
@@ -101,7 +101,7 @@ export default function SwapLayoutNew({ children }) {
                 </Tabs.Item>
 
                 <Tabs.Item title="Received" icon={MdDashboard}>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" type="received">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" type="received">
                         {
                             swaps.map((swap) => (
                                 swap.status === "received" && swap.status !== "sent" ?

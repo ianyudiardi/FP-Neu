@@ -34,7 +34,7 @@ export default function RegisterForm({sendToParent}) {
                 </Link>
             </div>
             <div className="w-full">
-                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 align-middle text-center text-white">Register</button>
+                <button className="bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 py-1 align-middle text-center text-white">Register</button>
             </div>
             <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
                 Already have an account?&nbsp;

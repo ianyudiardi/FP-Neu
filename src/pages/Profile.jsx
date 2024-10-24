@@ -37,7 +37,7 @@ export default function Profile() {
                     <div className="bg-white text-center">Settings</div>
                 </div>
             </div>
-            <div className='container p-2 h-screen'>
+            <div className='container p-2 h-screen ml-4'>
                 <p>Provide a brief description about yourself.</p>
                 <input type="text" className="bg-gray-500 h-40 p-4 rounded-lg w-full"/>
 

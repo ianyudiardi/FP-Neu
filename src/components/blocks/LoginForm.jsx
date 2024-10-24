@@ -17,7 +17,7 @@ export default function LoginForm({ sendToParent }) {
         // }
     })
 
-    function closeModal(){
+    function closeModal() {
         sendToParent(false);
     }
 
@@ -33,7 +33,7 @@ export default function LoginForm({ sendToParent }) {
                 username: username,
                 password: password,
             })
-        }).then(res => res.json()).then(async(data) => {
+        }).then(res => res.json()).then(async (data) => {
             localStorage.setItem('token', data.accessToken);
             if (data.accessToken) {
                 await Swal.fire({
@@ -65,10 +65,12 @@ export default function LoginForm({ sendToParent }) {
     }
 
     return (
-        <form onSubmit={handleLogin} action="" className="space-y-6">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-            <div>
-                <div className="mb-2 block">
+        <form onSubmit={handleLogin} action="" className="">
+            <div className="flex justify-center mb-4">
+                <h3 className="text-3xl font-medium text-gray-900 dark:text-white">Sign in</h3>
+            </div>
+            <div className="mb-2">
+                <div className="mb-1 block">
                     <Label htmlFor="username" value="Your email" />
                 </div>
                 <TextInput
@@ -78,13 +80,13 @@ export default function LoginForm({ sendToParent }) {
                     required
                 />
             </div>
-            <div>
-                <div className="mb-2 block">
+            <div className="mb-2">
+                <div className="mb-1 block">
                     <Label htmlFor="password" value="Your password" />
                 </div>
-                <TextInput id="password" type="password" onInput={(e) => { setPassword(e.target.value) }} value={password} required />
+                <TextInput id="password" type="password" placeholder="password" onInput={(e) => { setPassword(e.target.value) }} value={password} required />
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-10">
                 <div className="flex items-center gap-2">
                     <Checkbox id="remember" />
                     <Label htmlFor="remember">Remember me</Label>
@@ -93,8 +95,8 @@ export default function LoginForm({ sendToParent }) {
                     Lost Password?
                 </Link>
             </div>
-            <div className="w-full">
-                <button className="bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded px-2 py-1 text-center text-white">Log in</button>
+            <div className="w-full mb-3">
+                <button className="bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 py-1 text-center text-white">Sign in</button>
             </div>
             <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?&nbsp;

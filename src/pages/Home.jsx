@@ -4,11 +4,11 @@ import SignInModal from '../components/ui/CustomModal'
 
 export default function Home() {
     return (
-        <section className='grid grid-cols-2 h-screen'>
-            <div className='bg-gray-300'>
-                <div className='mt-36 pl-20'>
+        <section className='flex-col bg-gray-300 md:grid md:grid-cols-2 h-screen'>
+            <div className='bg-gray-300 min-h-fit'>
+                <div className='mb-5 py-4 md:mt-36 md:pl-20'>
                     <h1 className='font-bold text-4xl text-left mb-8'>Learn Something New,<br />Free of Charge.</h1>
-                    <Link to="Skills" className={`bg-gray-900 hover:bg-gray-800 active:bg-gray-700 border border-gray-700 rounded py-2 px-4 text-center text-white`}>Get Started</Link>
+                    <Link to="Skills" className={`bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded py-2 px-4 text-center text-white`}>Get Started</Link>
                 </div>
             </div>
             <div className='bg-logos flex items-center justify-center'>
