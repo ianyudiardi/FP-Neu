@@ -16,6 +16,7 @@ export default function CustomModal({children, textTrigger, className}) {
     return (
         <>
             <button className={`${className}`} onClick={() => setOpenModal(true)}>{textTrigger}</button>
+            <section className=""></section>
             <Modal show={openModal} size="md" onClose={onCloseModal} popup>
                 <Modal.Header />
                 <Modal.Body>
