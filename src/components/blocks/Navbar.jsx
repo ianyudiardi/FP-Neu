@@ -32,7 +32,10 @@ export default function Navbar() {
             text: 'Are you sure you want to logout?',
             showConfirmButton: true,
             showCancelButton: true,
-            buttonsStyling: true,
+            confirmButtonColor: "#DD6B55",
+            cancelButtonColor: "#007BFF",
+            confirmButtonText: "Yes",
+            cancelButtonText: "No",
         }).then((result) => {
             if (result.isConfirmed) {
                 localStorage.removeItem('token')
@@ -108,19 +111,19 @@ export default function Navbar() {
                             </div>
                         )
                     }
-                {
-                    !token &&
-                    (
-                        <div className="flex flex-col justify-evenly mt-2 gap-2">
-                            <CustomModal textTrigger={'Sign In'} className={`bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 text-center text-white`}>
-                                <LoginForm />
-                            </CustomModal>
-                            <CustomModal textTrigger={'Register'} className={`bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 text-center text-white`}>
-                                <RegisterForm />
-                            </CustomModal>
-                        </div>
-                    )
-                }
+                    {
+                        !token &&
+                        (
+                            <div className="flex flex-col justify-evenly mt-2 gap-2">
+                                <CustomModal textTrigger={'Sign In'} className={`bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 text-center text-white`}>
+                                    <LoginForm />
+                                </CustomModal>
+                                <CustomModal textTrigger={'Register'} className={`bg-blue-700 hover:bg-blue-800 active:bg-blue-900 border border-blue-900 rounded px-2 text-center text-white`}>
+                                    <RegisterForm />
+                                </CustomModal>
+                            </div>
+                        )
+                    }
                 </ul>
             </div>
         </section>
